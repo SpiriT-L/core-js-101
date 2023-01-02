@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable comma-dangle */
 /* ********************************************************************************************
@@ -513,8 +514,13 @@ function getIntervalArray(start, end) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  const uniqueArray = [];
+  arr.map((element) => {
+    if (!uniqueArray.includes(element)) uniqueArray.push(element);
+    return element;
+  });
+  return uniqueArray;
 }
 
 /**
