@@ -1,6 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable prefer-arrow-callback */
-/* eslint-disable comma-dangle */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *
@@ -231,12 +228,7 @@ function toArrayOfSquares(arr) {
  */
 
 function getMovingSum(arr) {
-  return arr.map(
-    (item, index) =>
-      // eslint-disable-next-line implicit-arrow-linebreak
-      arr.slice(0, index + 1).reduce((a, b) => a + b)
-    // eslint-disable-next-line implicit-arrow-linebreak
-  );
+  return arr.map((item, index) => arr.slice(0, index + 1).reduce((a, b) => a + b));
 }
 
 /**
@@ -354,10 +346,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-  // eslint-disable-next-line arrow-body-style
-  return arr.reduce((sum, elem) => {
-    return sum + elem;
-  }, 0);
+  return arr.reduce((sum, elem) => sum + elem, 0);
 }
 
 /**
