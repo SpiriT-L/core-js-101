@@ -394,8 +394,13 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  let sumOccurrences = 0;
+  arr.map((element) => {
+    if (element === item) sumOccurrences += 1;
+    return element;
+  });
+  return sumOccurrences;
 }
 
 /**
