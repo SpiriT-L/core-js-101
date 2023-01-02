@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow-callback */
 /* eslint-disable comma-dangle */
 /* ********************************************************************************************
  *                                                                                            *
@@ -20,8 +21,8 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
@@ -351,8 +352,11 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  // eslint-disable-next-line arrow-body-style
+  return arr.reduce((sum, elem) => {
+    return sum + elem;
+  }, 0);
 }
 
 /**
@@ -367,8 +371,13 @@ function getItemsSum(/* arr */) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let sumFalsyNumbers = 0;
+  arr.map((element) => {
+    if (Boolean(element) === false) sumFalsyNumbers += 1;
+    return element;
+  });
+  return sumFalsyNumbers;
 }
 
 /**
