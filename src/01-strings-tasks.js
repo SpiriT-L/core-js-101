@@ -200,16 +200,16 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-/* eslint-disable */
 
-function getRectangleString(width, height) {
-  const n = '\n';
+function getRectangleString(/* width, height */) {
+  throw new Error('Not implemented');
+  // const n = '\n';
 
-  const top = '┌' + '─'.repeat(width-2) + '┐' + n;
-  const center = ('│' + ' '.repeat(width-2) + '│' + n).repeat(height-2);
-  const bottom = '└' + '─'.repeat(width-2) + '┘' + n;
+  // const top = `'┌' ${'─'.repeat(width - 2)} '┐' ${n}`;
+  // const center = `('│'  ${' '.repeat(width - 2)}  '│' n).repeat(${height} - 2)`;
+  // const bottom = `'└' ${'─'.repeat(width - 2)} '┘' + n`;
 
-  return top + center + bottom;
+  // return top + center + bottom;
 }
 
 /**
@@ -258,7 +258,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return (typeof value === "string" || value instanceof String);
+  return Object.prototype.toString.call(value) === '[object String]';
 }
 
 /**
