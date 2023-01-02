@@ -1,4 +1,3 @@
-/* eslint-disable nonblock-statement-body-position */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
