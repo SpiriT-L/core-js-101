@@ -1,3 +1,4 @@
+/* eslint-disable nonblock-statement-body-position */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -200,8 +201,12 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for (let i = 2; i < n; i++) if (n % i === 0) return false;
-  return n > 1;
+  if (n <= 1) return false;
+
+  for (let i = 2; i * i <= n; i += 1) {
+    if (n % i === 0) return false;
+  }
+  return true;
 }
 
 /**
